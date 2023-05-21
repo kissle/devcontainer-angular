@@ -3,7 +3,7 @@ ENV NODE_ENV=development
 WORKDIR /usr/src/app
 
 RUN apk update \
-    && apk add git
+    && apk add git openssh-client
 
 COPY ["package.json", "package-lock.json*", "npm-shrinkwrap.json*", "./"]
 RUN npm install --development --silent && mv node_modules ../
